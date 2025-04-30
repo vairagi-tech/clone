@@ -47,7 +47,7 @@ pipeline {
 
   post {
     success {
-      echo '🚀 Deployed successfully on the same EC2 instance!'
+      echo '🚀 Deployed successfully on the EC2 instance!'
     }
     failure {
       echo '❌ Deployment failed. Check logs.'
