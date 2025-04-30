@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fearless Voice: Corporate Integrity Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #e25822;
+            --dark-bg: #121212;
+            --darker-bg: #1a1a1a;
+            --light-text: #ffffff;
+            --gray-text: #a0a0a0;
+            --border-radius: 4px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .view-reports-btn {
+            padding: 8px 16px;
+            border: 1px solid var(--light-text);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+        }
+
+        .view-reports-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .login-btn {
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #c04d1e;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .hero-content p {
+            margin-bottom: 30px;
+            color: var(--gray-text);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .primary-btn {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .primary-btn:hover {
+            background-color: #c04d1e;
+        }
+
+        .secondary-btn {
+            border: 1px solid var(--light-text);
+            color: var(--light-text);
+        }
+
+        .secondary-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 40px 0;
+            background-color: var(--darker-bg);
+            border-radius: 10px;
+            margin: 0 auto;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        .stats .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--gray-text);
+        }
+
+        /* Workflow Section */
+        .workflow {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--light-text);
+        }
+
+        .workflow-steps {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .workflow-step {
+            text-align: center;
+            max-width: 400px;
+            margin-bottom: 30px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+
+        .workflow-step h4 {
+            margin-bottom: 10px;
+        }
+
+        .workflow-step p {
+            color: var(--gray-text);
+        }
+
+        .workflow-curve {
+            width: 100%;
+            height: 50px;
+            margin: -15px 0;
+        }
+
+        /* FAQs Section */
+        .faqs {
+            padding: 80px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background-color: var(--darker-bg);
+            padding: 25px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .faq-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .faq-item h4 {
+            padding-left: 40px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        /* Ethical Workplace Section */
+        .ethical-workplace {
+            padding: 80px 0;
+        }
+
+        .ethical-workplace .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .ethical-content h2 span {
+            color: var(--primary-color);
+        }
+
+        .ethical-content p {
+            color: var(--gray-text);
+            margin-top: 20px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+        }
+
+        .benefits .section-title span {
+            font-weight: normal;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(226, 88, 34, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-icon i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .benefit-item h4 {
+            margin-bottom: 15px;
+        }
+
+        .benefit-item p {
+            color: var(--gray-text);
+        }
+
+        /* Reports Feed Section */
+        .reports-feed {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .reports-feed .section-title span {
+            color: var(--primary-color);
+        }
+
+        .reports-button {
+            margin-top: 40px;
+        }
+
+        .reports-button .btn i {
+            margin-right: 8px;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero .container,
+            .ethical-workplace .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+            
+            .faq-grid,
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--darker-bg);
+                flex-direction: column;
+                padding: 20px;
+                z-index: 100;
+            }
+            
+            nav a {
+                padding: 10px 0;
+            }
+            
+            .stats .container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .faq-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAxNTAgNTAiPjxwYXRoIGZpbGw9IiNlMjU4MjIiIGQ9Ik0yMCAxMGMtNS41MjMgMC0xMCA0LjQ3Ny0xMCAxMHM0LjQ3NyAxMCAxMCAxMCAyMC00LjQ3NyAyMC0xMC00LjQ3Ny0xMC0xMC0xMHptMCAxNWMtMi43NjEgMC01LTIuMjM5LTUtNXMyLjIzOS01IDUtNSA1IDIuMjM5IDUgNS0yLjIzOSA1LTUgNXoiLz48cGF0aCBmaWxsPSIjZTI1ODIyIiBkPSJNNDUgMTVoMTBjMi43NjEgMCA1IDIuMjM5IDUgNXMtMi4yMzkgNS01IDVoLTEwYy0yLjc2MSAwLTUtMi4yMzktNS01czIuMjM5LTUgNS01eiIvPjx0ZXh0IHg9IjcwIiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2UyNTgyMiI+RmVhcmxlc3NWb2ljZTwvdGV4dD48L3N2Zz4=" alt="Fearless Voice Logo">
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <a href="#" class="view-reports-btn">View Reports</a>
+                <a href="#" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fearless Voice: <span>Corporate Integrity Platform</span></h1>
+                <p>Fearless Voice offers a secure, blockchain-powered whistleblowing solution for corporations committed to ethical business practices. Create a culture of transparency where employees can safely report misconduct, fraud, or violations of company policy without fear of retaliation.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn primary-btn">Submit a Report</a>
+                    <a href="#" class="btn secondary-btn">Learn more</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNTAwIDMwMCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNlMjU4MjIiLz48cGF0aCBkPSJNMjUwLDUwIEwxNTAsMTUwIEwzNTAsMTUwIFoiIGZpbGw9IiNmZmZmZmYiLz48cGF0aCBkPSJNMTUwLDE1MCBMMTAwLDI1MCBMMjAwLDI1MCBaIiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTM1MCwxNTAgTDMwMCwyNTAgTDQwMCwyNTAgWiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yMDAsMjUwIEwyNTAsMjAwIEwzMDAsMjUwIFoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" alt="Whistleblowing Illustration">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <h2>98</h2>
+                <p>Data Security</p>
+            </div>
+            <div class="stat-item">
+                <h2>100</h2>
+                <p>Corporate Clients</p>
+            </div>
+            <div class="stat-item">
+                <h2>3500</h2>
+                <p>Reports Processed</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="workflow">
+        <div class="container">
+            <h2 class="section-title">Secure Whistleblowing Process</h2>
+            <h3 class="section-subtitle">Our Enterprise-Grade Reporting Workflow</h3>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h4>Submit Anonymous Report</h4>
+                    <p>Employee reports are encrypted and stored on blockchain technology, ensuring tamper-proof records and complete anonymity.</p>
+                </div>
+                <div class="workflow-curve">
+                    <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,25 Q50,50 100,25" stroke="#e25822" fill="none" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h4>Secure Review by Management</h4>
+                    <p>Authorized personnel receive and review reports through a secure dashboard while maintaining reporter anonymity.</p>
+                </div>
+                <div class="workflow-curve">
+                    <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,25 Q50,0 100,25" stroke="#e25822" fill="none" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h4>Investigation & Resolution</h4>
+                    <p>Reports are investigated according to company policy, with anonymous updates provided to whistleblowers through the platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faqs">
+        <div class="container">
+            <h2 class="section-title">FAQs</h2>
+            <p class="section-subtitle">Common questions about our corporate whistleblowing platform and how it can benefit your organization.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-number">1</div>
+                    <h4>What types of corporate misconduct can be reported?</h4>
+                    <p>Fearless Voice enables reporting of all types of corporate misconduct, including fraud, harassment, safety violations, conflicts of interest, environmental violations, and other ethical breaches in legal non-compliance.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-number">2</div>
+                    <h4>How does Fearless Voice ensure employee anonymity?</h4>
+                    <p>Our platform uses blockchain technology and advanced encryption to protect whistleblower identities. The platform never collects IP addresses or personal identifiers, greatly reducing the risk of exposure while facilitating secure two-way communication.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-number">3</div>
+                    <h4>Is the platform compliant with whistleblower protection laws?</h4>
+                    <p>Yes, Fearless Voice follows all major global and local whistleblower protection regulations, including EU Whistleblower Directive, Sarbanes-Oxley Act, and other international standards.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-number">4</div>
+                    <h4>How is data secured on the platform?</h4>
+                    <p>All data is encrypted end-to-end using military-grade encryption algorithms and stored on a distributed ledger, making it virtually impossible to tamper with. This creates an immutable audit trail while protecting sensitive information with enterprise-grade security protocols.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-number">5</div>
+                    <h4>Can our company customize the reporting workflow?</h4>
+                    <p>Absolutely. Fearless Voice offers flexible configuration options to align with your organization's specific policies, escalation procedures, and reporting structures. Our team works with you to implement a solution that fits your unique needs.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-number">6</div>
+                    <h4>How can we demonstrate ROI when implementing Fearless Voice?</h4>
+                    <p>Our platform offers detailed analytics on risk mitigation, case resolution times, legal compliance, increased employee trust, enhanced corporate culture, and strengthened regulatory compliance—all contributing to measurable ROI and risk mitigation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ethical-workplace">
+        <div class="container">
+            <div class="ethical-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNTAwIDMwMCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNlMjU4MjIiLz48cGF0aCBkPSJNMjUwLDUwIEwxNTAsMTUwIEwzNTAsMTUwIFoiIGZpbGw9IiNmZmZmZmYiLz48cGF0aCBkPSJNMTUwLDE1MCBMMTAwLDI1MCBMMjAwLDI1MCBaIiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTM1MCwxNTAgTDMwMCwyNTAgTDQwMCwyNTAgWiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yMDAsMjUwIEwyNTAsMjAwIEwzMDAsMjUwIFoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" alt="Ethical Workplace Illustration">
+            </div>
+            <div class="ethical-content">
+                <h2 class="section-title">Ethical Workplace, <span>Fearless Reporting</span></h2>
+                <p>Empower your employees to speak up against misconduct while protecting them and your organization with our secure, blockchain-powered whistleblowing platform.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Business Benefits <span>of Ethical Reporting</span></h2>
+            <p class="section-subtitle">Beyond compliance, our platform delivers measurable value to businesses of all sizes.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Risk Mitigation</h4>
+                    <p>Early detection of issues helps key personnel catch legal problems or misconduct before they escalate.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Regulatory Compliance</h4>
+                    <p>Meet or exceed whistleblower program requirements across global jurisdictions.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Culture Improvement</h4>
+                    <p>Cultivate transparency, accountability and employee engagement across the organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reports-feed">
+        <div class="container">
+            <h2 class="section-title"><span>Anonymous</span> Reports Feed</h2>
+            <p class="section-subtitle">Browse real whistleblower reports on our public feed. All personal identifiers have been removed to ensure anonymity and security.</p>
+            
+            <div class="reports-button">
+                <a href="#" class="btn primary-btn"><i class="fas fa-eye"></i> View Public Reports</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Animation for stats counters
+            const statItems = document.querySelectorAll('.stat-item h2');
+            
+            const animateCounter = (element, target, duration) => {
+                let start = 0;
+                const increment = target / (duration / 16);
+                
+                const updateCounter = () => {
+                    start += increment;
+                    
+                    if (start < target) {
+                        if (target >= 100) {
+                            element.textContent = Math.floor(start) + '+';
+                        } else {
+                            element.textContent = Math.floor(start) + '%';
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        if (target >= 100) {
+                            element.textContent = target + '+';
+                        } else {
+                            element.textContent = target + '%';
+                        }
+                    }
+                };
+                
+                updateCounter();
+            };
+            
+            // Intersection Observer to trigger animations when elements come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const value = parseInt(element.textContent);
+                        animateCounter(element, value, 1500);
+                        observer.unobserve(element);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statItems.forEach(item => {
+                const value = parseInt(item.textContent);
+                item.textContent = '0';
+                if (value) {
+                    observer.observe(item);
+                }
+            });
+
+            // Hover effects for FAQ items
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'translateY(-5px)';
+                    item.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+                    item.style.transition = 'all 0.3s ease';
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'translateY(0)';
+                    item.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+            let menuOpen = false;
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    menuOpen = !menuOpen;
+                    
+                    if (menuOpen) {
+                        nav.style.display = 'flex';
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                    } else {
+                        nav.style.display = '';
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    nav.style.display = 'flex';
+                } else if (!menuOpen) {
+                    nav.style.display = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
